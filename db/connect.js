@@ -1,1 +1,12 @@
-const connectionString = "mongodb+srv://gxlpes:<password>@cluster0.qxgzhd5.mongodb.net/?retryWrites=true&w=majority";
+const mongoose = require("mongoose");
+
+const connectBD = (url) => {
+  return mongoose.connect(url, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  });
+};
+
+module.exports = connectBD;
